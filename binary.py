@@ -1,23 +1,23 @@
-def binarySearch(list, value):
-    a = 0
-    b = len(list) - 1
+def binarySearch(arr, value):   # تابع جستجوی باینری/دودویی که یک لیست صعودی از اعداد و مقدار مورد نظر کاربر را دریافت میکند
+    a = 0 
+    b = len(arr) - 1            # تعریف متغیر برای خانه اول و خانه آخر لیست
 
-    while a <= b:
-        mid = (a + b) // 2
+    while a <= b:                # حلقه ای برای بررسی تمام اعداد موجود در لیست
+        mid = (a + b) // 2       # پیدا کردن خانه وسط 
 
-        if list[mid] == value:
-            print(f"Found at index {mid}")  
-            return mid
+        if arr[mid] == value:   # اگر عنصر موجود در خانه وسط با مقدار مورد نظر کاربر یکسان بود
+            print(f"Found at index {mid}")    # آنگاه پیام را چاپ کن
+            return mid           # توقف اجرای تابع و ارسال مقدار خانه وسط به بیرون تابع
 
-        if list[mid] < value:
-            a = mid + 1
-        else:
-            b = mid - 1
+        if arr[mid] < value:    # اگر عنصر خانه وسط از مقدار مورد نظر کوچکتر بود
+            a = mid + 1          # آنگاه خانه اول لیست جدید را تغییر بده به یک شماره بعد از خانه وسط
+        else:                    # در غیر این صورت (مقدار خانه وسط از مقدار مورد نظر بزرگتر بود)
+            b = mid - 1          # آنگاه خانه اول لیست جدید را تغییر بده به یک شماره قبل از خانه وسط
 
-    print("Not found") 
-    return -1
+    print("Not found")           # در صورت برقرار نبودن هیچ کدام از شروط (یکسان بودن، بزرگتری، کوچکتری)، پیام را چاپ کن
+    return -1                    # توقف تابع
 
-thelist = [ 2, 3, 7, 7, 11, 15, 25]
+thearr = [ 2, 3, 7, 7, 11, 15, 25]
 x = 11
 
-result = binarySearch(thelist, x)
+result = binarySearch(thearr, x)
